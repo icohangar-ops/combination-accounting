@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "combination-accounting"
+version = "0.1.0"
+description = "Deterministic ASC 805 / de-SPAC engine: purchase price allocation, goodwill vs bargain, reverse recapitalization, measurement-period adjustments, evidence pack."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Cubiczan", email = "sam@cubiczan.com" }]
+license = { text = "MIT" }
+keywords = ["asc-805", "de-spac", "purchase-accounting", "goodwill", "icfr"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+combination-accounting = "combination_accounting.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

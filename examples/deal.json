@@ -1,0 +1,12 @@
+{
+  "deal_id": "ENHA-COMBO",
+  "mode": "acquisition",
+  "cash": "50000000",
+  "equity_fv": "30000000",
+  "contingent_fv": "5000000",
+  "nci": "2000000",
+  "assets_fv": "90000000",
+  "liabilities_fv": "20000000",
+  "transaction_costs": "1200000",
+  "adjustments": []
+}
