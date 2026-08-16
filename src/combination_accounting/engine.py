@@ -1,10 +1,9 @@
 """ASC 805 business combination and de-SPAC reverse recapitalization.
 
-Enhabit carried pre-combination material weaknesses through a May business
-combination. `convergence` is M&A decision intelligence. This engine is
-purchase accounting: consideration, identifiable net assets at FV, NCI,
+Purchase accounting: consideration, identifiable net assets at FV, NCI,
 previously held interest, goodwill or bargain, measurement-period
 adjustments, and the reverse-recap path used in a typical de-SPAC.
+Pre-combination control gaps do not disappear at close.
 
 Fair values are inputs. The engine does not appraise anything.
 """

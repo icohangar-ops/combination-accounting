@@ -2,7 +2,7 @@
 
 > **Cubiczan stack** — [CHP](https://github.com/Cubiczan/consensus-hardening-protocol) · [control-spine](https://github.com/Cubiczan/control-spine) · **You are here:** `combination-accounting`
 
-**ASC 805 purchase accounting and de-SPAC reverse recapitalization.** Consideration, identifiable net assets at FV, NCI, previously held interest, goodwill or bargain gain, measurement-period adjustments, reverse-recap equity. Enhabit carried pre-combination weaknesses through a May combination. `convergence` is M&A decision intelligence. This is the purchase-accounting engine that was missing.
+**ASC 805 purchase accounting and de-SPAC reverse recapitalization.** Consideration, identifiable net assets at FV, NCI, previously held interest, goodwill or bargain gain, measurement-period adjustments, reverse-recap equity. Pre-combination control gaps do not disappear at close. `convergence` is M&A decision intelligence. This is the purchase-accounting engine.
 
 Fair values are inputs. The engine does not appraise a customer relationship or decide who the accounting acquirer is. The control owner does. The engine produces the allocation they reperform.
 
