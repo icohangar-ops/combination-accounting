@@ -32,3 +32,13 @@ combination-accounting examples/deal.json --period "H1 2026" --owner "Controller
 ## Compliance spine
 
 Vendored `control-spine`. Fair values and the accounting-acquirer determination are foundation inputs. Reverse recap still produces no goodwill. Unsigned packs are `EXPLORING`. A named owner reaches `LOCKED`.
+
+## MCP server
+
+`src/combination_accounting/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.Cubiczan` namespace (stdio transport) whose tools — `allocate_deal` and `deal_evidence_pack` — call `combination_accounting.engine` and `combination_accounting.evidence` verbatim. All allocation logic lives in the engine module; the wrapper adds no logic, touches no network, and never appraises anything — fair values and the accounting-acquirer determination stay inputs.
+
+```bash
+uvx --from combination-accounting combination-accounting-mcp
+# or from a checkout:
+python -m combination_accounting.mcp_server
+```
