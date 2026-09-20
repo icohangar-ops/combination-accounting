@@ -8,7 +8,7 @@ plus the accounting-acquirer determination stay inputs the control owner
 signs.
 
 Follows the same publishing path proven by invoice-audit-engine /
-codesentinel: namespace ``io.github.Cubiczan``, stdio transport, published
+codesentinel: namespace ``io.github.icohangar-ops/combination-accounting``, stdio transport, published
 via the ``mcp-publisher`` CLI.
 
 Run it:
