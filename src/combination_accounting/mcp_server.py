@@ -13,9 +13,9 @@ via the ``mcp-publisher`` CLI.
 
 Run it:
 
-    uvx --from combination-accounting combination-accounting-mcp
+    uvx --from 'combination-accounting[mcp]' combination-accounting-mcp
     # or, from a checkout:
-    python -m combination_accounting.mcp_server
+    uv run --with 'mcp>=1.2,<2' --with . python -m combination_accounting.mcp_server
 """
 
 from __future__ import annotations
