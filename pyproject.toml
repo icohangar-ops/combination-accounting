@@ -11,10 +11,11 @@ requires-python = ">=3.10"
 authors = [{ name = "Cubiczan", email = "sam@cubiczan.com" }]
 license = { text = "MIT" }
 keywords = ["asc-805", "de-spac", "purchase-accounting", "goodwill", "icfr"]
-dependencies = ["mcp>=1.2,<2"]
+dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+mcp = ["mcp>=1.2,<2"]
 
 [project.scripts]
 combination-accounting = "combination_accounting.cli:main"
