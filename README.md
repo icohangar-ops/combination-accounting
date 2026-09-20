@@ -32,3 +32,13 @@ combination-accounting examples/deal.json --period "H1 2026" --owner "Controller
 ## Compliance spine
 
 Vendored `control-spine`. Fair values and the accounting-acquirer determination are foundation inputs. Reverse recap still produces no goodwill. Unsigned packs are `EXPLORING`. A named owner reaches `LOCKED`.
+
+## MCP server
+
+`src/combination_accounting/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.icohangar-ops/combination-accounting` namespace (stdio transport) whose tools — `allocate_deal` and `deal_evidence_pack` — call `combination_accounting.engine` and `combination_accounting.evidence` verbatim. All allocation logic lives in the engine module; the wrapper adds no logic, touches no network, and never appraises anything — fair values and the accounting-acquirer determination stay inputs. Evidence packs built through MCP are always unsigned — the tool takes no owner, so the spine renders `EXPLORING` and `is_evidence: false`; a named human signs via the CLI (`--owner`), never through MCP. MCP access is opt-in, keeping the deterministic core zero-dependency: the engine and CLI install with no runtime dependencies, and the MCP server ships behind the `mcp` extra (`pip install 'combination-accounting[mcp]'`) — chosen over a hard dependency after prelint review, since a default install must stay dependency-free. CI installs `.[dev,mcp]` so the MCP tests still run.
+
+```bash
+uvx --from 'combination-accounting[mcp]' combination-accounting-mcp
+# or from a checkout:
+uv run --with 'mcp>=1.2,<2' --with . python -m combination_accounting.mcp_server
+```
