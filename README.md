@@ -40,5 +40,5 @@ Vendored `control-spine`. Fair values and the accounting-acquirer determination 
 ```bash
 uvx --from 'combination-accounting[mcp]' combination-accounting-mcp
 # or from a checkout:
-uv run --with 'mcp<2' --with . python -m combination_accounting.mcp_server
+uv run --with 'mcp>=1.2,<2' --with . python -m combination_accounting.mcp_server
 ```

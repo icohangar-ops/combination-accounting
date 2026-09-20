@@ -14,6 +14,7 @@ import pytest
 pytest.importorskip("mcp")
 
 from combination_accounting import mcp_server  # noqa: E402
+from control_spine import canonical_hash
 
 
 def _tool_names() -> set[str]:
@@ -52,4 +53,7 @@ def test_evidence_pack_pins_deal_id() -> None:
     assert pack["lock_state"] == "EXPLORING"
     assert pack["is_evidence"] is False
     assert pack["invoked_via"] == "mcp"
+    assert pack["spine"]["envelope_hash"] == canonical_hash(
+        {k: v for k, v in pack["spine"].items() if k != "envelope_hash"}
+    )
     assert pack["goodwill"] == "17000000.00"

@@ -122,9 +122,9 @@ def deal_evidence_pack(
     """
     allocation = _allocate_from_dict(deal)
     pack = evidence_pack(
-        allocation, period_label, "", deal.get("deal_id", "deal")
+        allocation, period_label, "", deal.get("deal_id", "deal"),
+        invoked_via="mcp",
     )
-    pack["invoked_via"] = "mcp"
     return _jsonify(pack)
 
 

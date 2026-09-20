@@ -14,7 +14,7 @@ ENGINE_ID = "combination-accounting-engine"
 ENGINE_VERSION = "0.1.0"
 
 
-def evidence_pack(allocation: Allocation, period_label: str, owner: str, deal_id: str) -> dict:
+def evidence_pack(allocation: Allocation, period_label: str, owner: str, deal_id: str, invoked_via: str | None = None) -> dict:
     pack = {
         "control_id": "ICFR-ASC805-01",
         "control_objective": "Business combinations and reverse recapitalizations are measured from FV inputs; goodwill/bargain and measurement-period adjustments are complete.",
@@ -43,6 +43,8 @@ def evidence_pack(allocation: Allocation, period_label: str, owner: str, deal_id
             "Owner confirms FV inputs and the accounting-acquirer determination."
         ),
     }
+    if invoked_via is not None:
+        pack["invoked_via"] = invoked_via
     return seal(
         pack,
         engine_id=ENGINE_ID,
