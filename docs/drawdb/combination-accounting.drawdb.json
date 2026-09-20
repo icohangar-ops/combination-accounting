@@ -1,0 +1,95 @@
+{
+  "title": "combination-accounting",
+  "tables": [
+    {
+      "id": 0,
+      "name": "consideration",
+      "x": 80,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "transaction_name", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 2, "name": "cash_paid", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "equity_issued", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "contingent_consideration", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "debt_assumed", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "fair_value_total", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "transaction_costs", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 8, "name": "nci", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 9, "name": "previously_held_interest", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#7d9dff"
+    },
+    {
+      "id": 1,
+      "name": "identifiable",
+      "x": 420,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "consideration_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "asset_name", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "asset_type", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "fair_value", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "useful_life_months", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "is_intangible", "type": "BOOLEAN", "default": false, "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "liability_assumed", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 8, "name": "comment", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#ffe159"
+    },
+    {
+      "id": 2,
+      "name": "measurement_adjustment",
+      "x": 760,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "consideration_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "item", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "adjustment_type", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "amount", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "tax_effect", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "comment", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#9be7a2"
+    },
+    {
+      "id": 3,
+      "name": "allocation",
+      "x": 1100,
+      "y": 80,
+      "fields": [
+        {"id": 0, "name": "id", "type": "INTEGER", "default": "", "check": "", "primary": true, "unique": false, "notNull": true, "increment": true, "comment": ""},
+        {"id": 1, "name": "consideration_id", "type": "INTEGER", "default": "", "check": "", "primary": false, "unique": false, "notNull": true, "increment": false, "comment": ""},
+        {"id": 2, "name": "net_assets_fv", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 3, "name": "goodwill", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 4, "name": "bargain_purchase_gain", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 5, "name": "recap_equity", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 6, "name": "consolidated_equity", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 7, "name": "transaction_cost_expense", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 8, "name": "earnings_effect", "type": "NUMERIC", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""},
+        {"id": 9, "name": "notes", "type": "TEXT", "default": "", "check": "", "primary": false, "unique": false, "notNull": false, "increment": false, "comment": ""}
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#ffaf7d"
+    }
+  ],
+  "relationships": [
+    {"startTableId": 1, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "identifiable_consideration_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 0},
+    {"startTableId": 2, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "measurement_adjustment_consideration_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 1},
+    {"startTableId": 3, "startFieldId": 1, "endTableId": 0, "endFieldId": 0, "name": "allocation_consideration_id_fk", "cardinality": "many_to_one", "updateConstraint": "No action", "deleteConstraint": "No action", "id": 2}
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "types": [],
+  "enums": [],
+  "views": []
+}
