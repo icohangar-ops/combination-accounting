@@ -35,7 +35,7 @@ Vendored `control-spine`. Fair values and the accounting-acquirer determination 
 
 ## MCP server
 
-`src/combination_accounting/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.Cubiczan` namespace (stdio transport) whose tools — `allocate_deal` and `deal_evidence_pack` — call `combination_accounting.engine` and `combination_accounting.evidence` verbatim. All allocation logic lives in the engine module; the wrapper adds no logic, touches no network, and never appraises anything — fair values and the accounting-acquirer determination stay inputs.
+`src/combination_accounting/mcp_server.py` publishes the engine over Model Context Protocol: a thin wrapper in the `io.github.Cubiczan` namespace (stdio transport) whose tools — `allocate_deal` and `deal_evidence_pack` — call `combination_accounting.engine` and `combination_accounting.evidence` verbatim. All allocation logic lives in the engine module; the wrapper adds no logic, touches no network, and never appraises anything — fair values and the accounting-acquirer determination stay inputs. Evidence packs built through MCP are always unsigned — the tool takes no owner, so the spine renders `EXPLORING` and `is_evidence: false`; a named human signs via the CLI (`--owner`), never through MCP.
 
 ```bash
 uvx --from combination-accounting combination-accounting-mcp

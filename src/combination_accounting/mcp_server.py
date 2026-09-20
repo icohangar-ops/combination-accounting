@@ -107,7 +107,6 @@ def allocate_deal(deal: dict[str, Any]) -> dict[str, Any]:
 def deal_evidence_pack(
     deal: dict[str, Any],
     period_label: str = "current",
-    owner: str = "",
 ) -> dict[str, Any]:
     """Build the ASC 805 evidence pack a tester can reperform without the source code.
 
@@ -117,12 +116,16 @@ def deal_evidence_pack(
     Args:
         deal: Deal terms, same shape as allocate_deal's input.
         period_label: Close period label (e.g. "H1 2026").
-        owner: Named owner for sign-off. Must not be the engine.
+        Sign-off: MCP never accepts an owner — packs built here are always
+        unsigned (EXPLORING, not evidence). A named human signs via the CLI
+        (--owner), never through MCP.
     """
     allocation = _allocate_from_dict(deal)
-    return _jsonify(
-        evidence_pack(allocation, period_label, owner, deal.get("deal_id", "deal"))
+    pack = evidence_pack(
+        allocation, period_label, "", deal.get("deal_id", "deal")
     )
+    pack["invoked_via"] = "mcp"
+    return _jsonify(pack)
 
 
 def main() -> None:

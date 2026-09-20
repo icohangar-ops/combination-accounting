@@ -47,6 +47,9 @@ def test_allocate_deal_pins_the_suite_numbers() -> None:
 
 
 def test_evidence_pack_pins_deal_id() -> None:
-    pack = mcp_server.deal_evidence_pack(_deal(), period_label="H1 2026", owner="Controller")
+    pack = mcp_server.deal_evidence_pack(_deal(), period_label="H1 2026")
     assert pack["deal_id"] == "DEAL-1"
+    assert pack["lock_state"] == "EXPLORING"
+    assert pack["is_evidence"] is False
+    assert pack["invoked_via"] == "mcp"
     assert pack["goodwill"] == "17000000.00"
